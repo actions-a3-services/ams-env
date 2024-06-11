@@ -3,7 +3,7 @@ description: Fetches and describes the latest Git tag
 inputs: {}
 outputs: {}
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - run: git fetch --unshallow || git fetch
     - run: echo "Git describe: $(git describe)"
