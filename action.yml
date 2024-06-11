@@ -1,5 +1,6 @@
-name: Get Git describe
-description: Fetches and describes the latest Git tag
+name: AMS Setup
+description: Setup AMS enviroment variables
+author: a3.services
 branding:
   icon: settings
   color: purple
@@ -9,13 +10,6 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: git fetch --unshallow || git fetch
-    - shell: bash
       run: |
-        echo "Git describe: $(git describe)"
-    - shell: bash
-      run: |
-        echo "cool"
-        echo "cool2"
-    - shell: bash
-      run: echo "AMS_REVISION=$(git describe --tags)" >> $GITHUB_ENV
+        git fetch --unshallow || git fetch
+        echo "AMS_REVISION=$(git describe --tags)" >> $GITHUB_ENV
