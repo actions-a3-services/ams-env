@@ -6,6 +6,7 @@ runs:
   using: composite
   steps:
     - run: git fetch --unshallow || git fetch
-    - run: echo "Git describe: $(git describe)"
+    - run: |
+      echo "Git describe: $(git describe)"
     - run: echo "cool"
     - run: echo "AMS_REVISION=$(git describe --tags)" >> $GITHUB_ENV
