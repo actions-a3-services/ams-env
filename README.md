@@ -28,4 +28,4 @@ None
 ## Outputs
 ```
 AMS_REVISION: The latest Git tag description.
-``
+```
