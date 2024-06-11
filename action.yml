@@ -1,5 +1,5 @@
-name: 'Get Git describe'
-description: 'Fetches and describes the latest Git tag'
+name: Get Git describe
+description: Fetches and describes the latest Git tag
 inputs: {}
 outputs: {}
 runs:
