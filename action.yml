@@ -1,5 +1,5 @@
 name: AMS Setup
-description: Setup AMS enviroment variables
+description: Setup AMS environment variables
 author: a3.services
 branding:
   icon: settings
@@ -12,7 +12,8 @@ runs:
     - shell: bash
       run: |
         git fetch --unshallow || git fetch
+        AMS_REVISION=$(git describe --tags 2>/dev/null || echo "no-tag")
         echo "AMS_NAME=${{ github.event.repository.name }}" >> ${GITHUB_ENV}
-        echo "AMS_REVISION=$(git describe --tags)" >> ${GITHUB_ENV}
+        echo "AMS_REVISION=$AMS_REVISION" >> ${GITHUB_ENV}
         echo "AMS_BUILD=$(date '+%y%m%d-%H%M%S')" >> ${GITHUB_ENV}
         echo ${GITHUB_ENV}
