@@ -11,6 +11,7 @@ runs:
   steps:
     - shell: bash
       run: |
+        export TZ="Europe/Bratislava"
         git fetch --unshallow || git fetch
         AMS_REVISION=$(git describe --tags 2>/dev/null || echo "no-tag")
         echo "AMS_NAME=${{ github.event.repository.name }}" >> ${GITHUB_ENV}
