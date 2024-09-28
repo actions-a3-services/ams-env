@@ -9,9 +9,9 @@ outputs: {}
 runs:
   using: composite
   steps:
+    - name: Download environment variables
     - shell: sh
       run: |
-      - name: Download environment variables
         uses: actions/download-artifact@v4
         with:
           name: ams-env
