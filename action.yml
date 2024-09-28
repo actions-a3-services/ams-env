@@ -25,7 +25,7 @@ runs:
         cat ams.env
         
     - name: Upload environment variables
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: ams-env
         path: ams.env
