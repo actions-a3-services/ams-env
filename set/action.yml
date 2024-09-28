@@ -1,0 +1,32 @@
+name: AMS Set
+description: Set AMS environment variables
+author: a3.services
+branding:
+  icon: settings
+  color: purple
+inputs: {}
+outputs: {}
+runs:
+  using: composite
+  steps:
+    - name: Compose AMS
+      shell: sh
+      run: |
+        export TZ="Europe/Bratislava"
+        git fetch --unshallow || git fetch
+        AMS_REVISION=$(git describe --tags 2>/dev/null || echo "no-tag")
+        
+        echo "AMS_NAME=${{ github.event.repository.name }}" >> ams.env
+        echo "AMS_REVISION=$AMS_REVISION" >> ams.env
+        echo "AMS_BUILD=$(date '+%y%m%d-%H%M%S')" >> ams.env
+
+        cat ams.env >> ${GITHUB_ENV}
+
+        cat ${GITHUB_ENV}
+        cat ams.env
+        
+    - name: Upload environment variables
+      uses: actions/upload-artifact@v4
+      with:
+        name: ams-env
+        path: ams.env

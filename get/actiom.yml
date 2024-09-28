@@ -1,0 +1,21 @@
+name: AMS Get
+description: Get AMS environment variables
+author: a3.services
+branding:
+  icon: settings
+  color: purple
+inputs: {}
+outputs: {}
+runs:
+  using: composite
+  steps:
+    - shell: sh
+      run: |
+      - name: Download environment variables
+        uses: actions/download-artifact@v4
+        with:
+          name: ams-env
+
+    - name: Set AMS environment variables
+      run: |
+        cat ams.env >> ${GITHUB_ENV}
