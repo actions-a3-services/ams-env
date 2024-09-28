@@ -15,5 +15,6 @@ runs:
         name: ams-env
 
     - name: Set AMS environment variables
+      shell: sh
       run: |
         cat ams.env >> ${GITHUB_ENV}
