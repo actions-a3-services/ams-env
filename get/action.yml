@@ -27,5 +27,3 @@ runs:
         echo "| AMS_NAME          | ${{ env.AMS_NAME }}                        |" >> $GITHUB_STEP_SUMMARY
         echo "| AMS_REVISION      | ${{ env.AMS_REVISION }}                    |" >> $GITHUB_STEP_SUMMARY
         echo "| AMS_BUILD         | ${{ env.AMS_BUILD }}                       |" >> $GITHUB_STEP_SUMMARY
-        echo "| DOCKERHUB_USERNAME| ${{ vars.DOCKERHUB_USERNAME }}             |" >> $GITHUB_STEP_SUMMARY
-        echo "| DOCKERHUB_TOKEN   | ${{ secrets.DOCKERHUB_TOKEN }}             |" >> $GITHUB_STEP_SUMMARY
