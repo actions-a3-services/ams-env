@@ -25,7 +25,7 @@ runs:
       
     - name: Summary
       shell: sh
-      if: ${{ inputs.summary == true }}
+      if: ${{ inputs.summary == 'true' }}
       run: |
         echo "### Environment Details" >> $GITHUB_STEP_SUMMARY
         echo "| Variable          | Value                                      |" >> $GITHUB_STEP_SUMMARY
