@@ -15,10 +15,12 @@ runs:
         name: ams-env
 
     - name: Set AMS environment variables
+      shell: sh
       run: |
         cat ams.env >> ${GITHUB_ENV}
       
     - name: Summary
+      shell: sh
       if: ${{ inputs.summary == true }}
       run: |
         echo "### Environment Details" >> $GITHUB_STEP_SUMMARY
