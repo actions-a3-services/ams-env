@@ -4,7 +4,11 @@ author: a3.services
 branding:
   icon: settings
   color: purple
-inputs: {}
+inputs:
+  summary:
+    description: 'Enable or disable the summary output'
+    required: false
+    default: 'false'
 outputs: {}
 runs:
   using: composite
